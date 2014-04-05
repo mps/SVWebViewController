@@ -35,7 +35,6 @@
 
 @end
 
-
 @implementation SVWebViewController
 
 #pragma mark - Initialization
@@ -200,7 +199,8 @@
         toolbar.items = items;
         toolbar.barStyle = self.navigationController.navigationBar.barStyle;
         toolbar.tintColor = self.navigationController.navigationBar.tintColor;
-	toolbar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        toolbar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        toolbar.translucent = self.navigationController.navigationBar.translucent;
         self.navigationItem.rightBarButtonItems = items.reverseObjectEnumerator.allObjects;
     }
     
@@ -219,7 +219,8 @@
         
         self.navigationController.toolbar.barStyle = self.navigationController.navigationBar.barStyle;
         self.navigationController.toolbar.tintColor = self.navigationController.navigationBar.tintColor;
-	self.navigationController.toolbar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        self.navigationController.toolbar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        self.navigationController.toolbar.translucent = self.navigationController.navigationBar.translucent;
         self.toolbarItems = items;
     }
 }
@@ -230,7 +231,6 @@
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self updateToolbarItems];
 }
-
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
